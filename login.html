@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="jp" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/style.css"><!--google用-->
+    <title>ログイン｜チャットアプリ(Firebase活用)</title>
+</head>
+<body class="text-gray-600 bg-gray-50">
+
+  <div id="wap" class="bg-white mx-auto p-4 md:p-8 md:max-w-screen-md">
+
+    <div class="relative flex flex-1 shrink-0 items-center justify-center overflow-hidden rounded-lg py-16">
+      <!-- image - start -->
+      <img src="https://images.unsplash.com/photo-1618004652321-13a63e576b80?auto=format&q=75&fit=crop&w=1500" loading="lazy" alt="" class="absolute inset-0 h-full w-full object-cover object-center" />
+      <!-- image - end -->
+
+      <!-- text start -->
+      <div class="relative flex flex-col items-center p-4">
+        <p class="mb-4 text-center text-2xl">イノベーションを創出しよう</p>
+        <h1 class="text-center text-4xl font-bold">孫家秘伝のアイデア発想法</h1>
+      </div>
+      <!-- text end -->
+    </div>
+    <p class="text-xs mt-1">引用：日経ビジネス　兄・正義が体系化した孫家秘伝のアイデア発想法<br>https://business.nikkei.com/atcl/opinion/16/041400010/071900007/</p>
+
+    <p class="text-center mt-8 mb-2">Googleアカウントでログインするとアイデアを記録できます。</p>
+    <div class="text-center">
+      <button id="login" class="gsi-material-button">
+        <div class="gsi-material-button-state"></div>
+          <div class="gsi-material-button-content-wrapper">
+            <div class="gsi-material-button-icon">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block;">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+              <path fill="none" d="M0 0h48v48H0z"></path>
+              </svg>
+          </div>
+          <span class="gsi-material-button-contents">Google でログイン</span>
+          <span style="display: none;">Sign in with Google</span>
+        </div>
+      </button>
+    </div>
+
+    <div>
+      <!-- 1つ目　start -->
+      <div>
+        <h2 class="text-2xl bg-gray-500 text-white p-4 mt-8 mb-4"><span class="bg-white text-gray-500 text-lg py-1 px-4 mr-2 align-text-bottom rounded-full ">STEP1</span>問題解決型発想法</h2>
+          <p>生活をしている中で「困った」「問題だ」と気づいたことを書きとめましょう。</p>    
+      </div>
+      <!-- 1つ目　end -->
+
+      
+      <!-- 2つ目　start -->
+      <div class="">
+        <h2 class="text-2xl bg-gray-500 text-white p-4 mt-12 mb-4"><span class="bg-white text-gray-500 text-lg py-1 px-4 mr-2 align-text-bottom rounded-full ">STEP2</span>逆転発想法</h2>
+          <p>世の中にあるものの逆を考えていく方法です。単語を眺め、逆転させて考えましょう。</p>
+      </div>
+      <!-- 2つ目　end -->
+
+      <!-- 3つ目　start -->
+      <div>
+        <h2 class="text-2xl bg-gray-500 text-white p-4 mt-12 mb-4"><span class="bg-white text-gray-500 text-lg py-1 px-4 mr-2 align-text-bottom rounded-full ">STEP3</span>複合連結型発想法</h2>
+          <p>単語を組み合わせて新しいアイデアを考えましょう。</p>
+      </div>
+      <!-- 3つ目　end -->
+
+    </div>
+
+    <footer class="mx-auto py-8 pb-0">
+      <div class="py-8 pb-0 border-t text-center text-sm text-gray-300">© 2024 - kadai.</div>
+    </footer>
+
+  </div><!-- wap end -->
+
+  <script type="module" src="./js/login.js"></script>
+</body>
+</html>
