@@ -60,31 +60,6 @@ onAuthStateChanged(auth, (user) => {
             $("#wap").fadeIn(500);
         }
 
-        if (user.isNewUser) {
-            // 初めてのログインの場合の処理
-
-            const themeText = "机, 椅子, 本, 鉛筆, ペン, ノート, カバン, 時計, カレンダー, ガラス, ドア, 窓, テレビ, 冷蔵庫, 電子レンジ, 扇風機, 照明, 洗濯機, ソファ, クッション, ベッド, 枕, 布団, 掃除機, ダストパン, 箒, ゴミ箱, ハンカチ, 財布, 靴, 傘, スカーフ, ジーンズ, シャツ, 靴下, 時計, 財布, バッグ, カメラ, イヤホン, ヘッドフォン, マウス, キーボード, スマートフォン, モバイルバッテリー, ゲーム, ベッドルーム, リビングルーム, ダイニングルーム, キッチン, バスルーム, トイレ, シャワー, バスタブ, 洗面台, 鏡, タオル, シャンプー, コンディショナー, ボディーソープ, 歯磨き粉, 歯ブラシ, トイレットペーパー, ティッシュ, ソース, 醤油, ケチャップ, マヨネーズ, マスタード, ハチミツ, ソーセージ, ハム, チーズ, ヨーグルト, 卵, パン, 米, 麺, 肉, 魚, 野菜, 果物, ジュース, お茶, コーヒー, 水, ビール, ワイン, お酒, ケーキ, クッキー, チョコレート, アイスクリーム, ポテトチップス, スナック, パンケーキ, ピザ, ハンバーガー, サンドイッチ, 寿司, ラーメン, カレー, 焼肉, しゃぶしゃぶ, 鍋, 天ぷら, 唐揚げ, 焼き鳥, 串カツ, たこ焼き, お好み焼き, フライドチキン, ステーキ, ホットドッグ, タコス";
-
-            // button#theme_save のトリガー
-            const words = themeText.split(',');
-            const dbReftheme = ref(db, "theme/");
-
-            for (let i = 0; i < words.length; i++) {
-                const themewords = {
-                    userId: uid,
-                    theme: words[i],
-                }
-                const newPostRef = push(dbReftheme);
-                set(newPostRef,themewords);
-            }
-        }
-
-
-
-
-
-
-
         //###############################################
         //関数
         //###############################################
@@ -225,8 +200,13 @@ onAuthStateChanged(auth, (user) => {
         //ファイヤーベースからデータを取ってくる、for文回す(今回はonChildAddedでOK)、取ってきたデータの数分pushを回す
         const themewords = [];//最終的に使うもの
         onChildAdded(dbReftheme,function(data){
-            const themeList = data.val().theme;
-            themewords.push(themeList);
+            
+            const userid = data.val().userId;
+
+            if(userid === uid){
+                const themeList = data.val().theme;
+                themewords.push(themeList);
+            }
 
             const randomIndexS2 = Math.floor(Math.random() * themewords.length);
             $("#step02_theme").text(themewords[randomIndexS2]);
